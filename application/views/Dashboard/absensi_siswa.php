@@ -16,12 +16,12 @@
     <script src="<?= base_url(); ?>assets/vendors/sweetalert2/dist/sweetalert2.all.min.js"></script>
     <style>
         body {background-color: #F7F7F7; color: black; height: 100%;}
-        .data-left {box-shadow: 0 0 25px rgba(0,0,0, 0.3);background: white;border-radius: 0 0 10px 10px;box-sizing: border-box; height: 80vh; padding:20px;}
+        .data-left {box-shadow: 0 0 25px rgba(0,0,0, 0.3);background: white;border-radius: 0 0 10px 10px;box-sizing: border-box; height: 90vh; padding:20px;}
         .data-left .boxData {height: fit-content; margin-top:60px;}
         .input_absen > div {width: 100%;padding: 10px; font-size: 15px;}
         .input_absen > input.data {width: 100%;}
         .data-left span a {text-decoration: none; color: black; font-size: 15px;}
-        .data-right {background: white;box-shadow: 0 0 20px rgba(0,0,0, 0.3);padding: 15px;border-radius: 0 0 0 10px;box-sizing: border-box;height: 80vh;}
+        .data-right {background: white;box-shadow: 0 0 20px rgba(0,0,0, 0.3);padding: 15px;border-radius: 0 0 0 10px;box-sizing: border-box;height: 90vh;}
         tbody > tr td {padding: 5px;font-size: 15px;width: 200px;}
         #data_absen .d-flex {background-color: #1c3681;padding: 10px 0;}
         @media screen and (max-width: 1180px) {.dt-siswa .row .col-lg-6 {margin-left: 60px;}}

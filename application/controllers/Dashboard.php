@@ -21,12 +21,9 @@ class Dashboard extends CI_Controller
 
     private function setJadwalAbsensi()
     {
-        $date = new DateTime();
-        $date->modify("-1 days");
-        $this->db->delete("jadwal", ["tgl_berlaku" => $date->format("Y-m-d")]);
-
         $getSesi = $this->db->get_where("jadwal", ["tgl_berlaku" => date("Y-m-d")]);
         if (!$getSesi->num_rows()) {
+            $this->db->query("DELETE FROM jadwal");
             $data = [
                 'jam_masuk' => strtotime(date("07:00")),
                 'jam_pulang' => strtotime(date("14:00")),
