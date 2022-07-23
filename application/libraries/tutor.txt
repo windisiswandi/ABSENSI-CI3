@@ -1,0 +1,15 @@
+
+/*              Membuat QR Code                */
+
+    // $config['imagedir']     = './assets/images/'; //direktori penyimpanan qr code
+    // $config['black']        = array(224,255,255); // array, default is array(255,255,255)
+    // $config['white']        = array(70,130,180); // array, default is array(0,0,0)
+    // $this->ciqrcode->initialize($config);
+
+    // $nameQR = uniqid().".png";
+    // $params['data'] = "Text"; //data yang akan di jadikan QR CODE
+    // $params['level'] = 'H'; //H=High
+    // $params['size'] = 3;
+    // $params['savename'] = FCPATH.$config['imagedir'].$nameQR; //simpan image QR CODE ke folder assets/images/
+    // $this->ciqrcode->generate($params); // fungsi untuk generate QR CODE
+    // echo "<img src='".base_url("assets/images/").$nameQR."'/>";

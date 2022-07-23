@@ -1,0 +1,94 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+tr > th,
+tr > td {
+	padding: 0 5px 0 5px;
+	font-size: 12px;
+	border: 1px solid black;
+}
+tr > th {
+	height: 25px;
+	padding: 3px 0 3px 0;
+}
+.container {
+	width: 100%;
+	margin: 0px auto;
+	/* position: relative;
+	box-sizing: border-box; */
+}
+
+table {
+	width: 100%;
+	font-family: Arial;
+}
+.last ~ td {
+	display: none;
+}
+/* tr > th.th_md {
+    padding: 0 10px 0 10px;
+} */
+
+/* 
+.ttd_wali {
+    position: absolute;
+    right: 12px;
+    bottom: 0px;
+    width: 235px;
+    height: 295px;
+    padding: 20px 0 0 30px;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}.ttd_wali > p {
+    font-size: 12px;
+    font-family: Arial;
+} */
+div.container1 {
+	width: 100%;
+	margin: 0 auto;
+}
+tr > th,
+tr > td {
+	padding: 0 4px 0 4px;
+	border: 1px solid black;
+}
+tr > th {
+	font-size: 11px;
+}
+tr > td {
+	font-size: 10px;
+}
+table {
+	width: 100%;
+}
+
+.info_jk {
+	padding: 10px 0 10px 15px;
+}
+.info_jk > p {
+	margin: 0;
+}
+.info_jk > span {
+	float: right;
+	margin-right: 10px;
+	font-style: italic;
+}
+
+.btnBack {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+}
+
+.btnBack i {
+	color: black;
+}
+
+
+@media print {
+	.btnBack {
+		display: none;
+	}
+}
