@@ -165,7 +165,7 @@ class Absensi extends CI_Controller
                 $getSesi = $this->db->get_where("jadwal", ["tgl_berlaku" => date("Y-m-d")])->result_array()[0];
           
                 if (strtotime(date("H:i")) <= $getSesi["jam_masuk"]) { $data["data"]["ket"] = "Hadir";}
-                else { $data["data"]["ket"] = "Terlambat Masuk";}
+                else { $data["data"]["ket"] = "Terlambat";}
 
                 $result = $this->Data_model->Presensi($data["data"]);
                 if ($result["status"]) {

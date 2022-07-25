@@ -23,7 +23,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = "http://".$_SERVER["SERVER_NAME"]."/Data_siswa";
+$folder = explode("/", $_SERVER['REQUEST_URI']);
+$config['base_url'] = "http://".$_SERVER["SERVER_NAME"]."/$folder[1]";
 // $config['base_url'] = 'http://192.168.100.1/Data_siswa';
 
 /*
