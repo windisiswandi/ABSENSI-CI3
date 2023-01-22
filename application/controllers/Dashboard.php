@@ -36,6 +36,18 @@ class Dashboard extends CI_Controller
 
     public function index()
     {
+        // $SISWA = $this->Data_model->getDataSiswa("ok");
+        // foreach ($SISWA as $value) {
+        //     if ($value['id_card'] == "11743") {
+        //         var_dump($value);
+        //         return;
+        //     }
+
+        //     // $this->Data_model->updateDataSiswa($data);
+        // }
+        // die;
+
+
         if ($this->session->userdata("login")) {
             $this->_data["title"] = "DASHBOARD | DATA SISWA";
             $uri_segment = $this->uri->segment(3);
@@ -171,7 +183,6 @@ class Dashboard extends CI_Controller
                                 'kelas'       => $row->getCellAtIndex(4),
                                 'jurusan'     => $row->getCellAtIndex(5),
                                 'jenisKelamin' => $row->getCellAtIndex(3),
-                                'foto' => $row->getCellAtIndex(7),
                                 'thn_masuk' => $row->getCellAtIndex(6)
                             );
                             if ($this->input->post("btn_edit") == "upload") {

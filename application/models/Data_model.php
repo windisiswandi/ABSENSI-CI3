@@ -46,6 +46,7 @@ class Data_model extends CI_Model {
 
         $this->db->order_by("nama_siswa", "asc");
         return $this->db->get("siswa", $data["limit"], $data["start"])->result_array();
+        // return $this->db->get("siswa")->result_array();
     }
 
     public function tambahDataSiswa($data)
