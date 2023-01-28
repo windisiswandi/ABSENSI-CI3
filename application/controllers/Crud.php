@@ -11,32 +11,36 @@ class Crud extends CI_Controller
 //======================= CRUD SISWA =======================//
     public function tambah_data()
     {
-        $config["upload_path"] = "assets/images/foto_siswa/".$this->input->post("thn_masuk")."/".$this->input->post("jurusan")."/";
-        $config["file_name"] = $_FILES["fileFoto"]["name"];
-        $config["allowed_types"] ="jpg|jpeg|png";
+        $data = [
+            "id_card" => $this->input->post("NIPD"),
+            "NIPD" => $this->input->post("NIPD"),
+            "nama_siswa" => $this->input->post("nama_siswa"),
+            "kelas" => $this->input->post("kelas"),
+            "jenisKelamin" => $this->input->post("jenisKelamin"),
+            "jurusan" => $this->input->post("jurusan"),
+            "thn_masuk" => $this->input->post("thn_masuk")
+        ];
 
-        $this->load->library("upload", $config);
+        if (isset($_FILES['fileFoto'])) {
+            $config["upload_path"] = "assets/images/foto_siswa/".$this->input->post("thn_masuk")."/".$this->input->post("jurusan")."/";
+            $config["file_name"] = $_FILES["fileFoto"]["name"];
+            $config["allowed_types"] ="jpg|jpeg|png";
+    
+            $this->load->library("upload", $config);
+    
+            if ($this->upload->do_upload("fileFoto")) {
+                $file = $this->upload->data();
 
-        if ($this->upload->do_upload("fileFoto")) {
-            $file = $this->upload->data();
-            $data = [
-                "id_card" => $this->input->post("NIPD"),
-                "NIPD" => $this->input->post("NIPD"),
-                "nama_siswa" => $this->input->post("nama_siswa"),
-                "kelas" => $this->input->post("kelas"),
-                "jenisKelamin" => $this->input->post("jenisKelamin"),
-                "jurusan" => $this->input->post("jurusan"),
-                "thn_masuk" => $this->input->post("thn_masuk"),
-                "foto" => $config["upload_path"].$file["file_name"]
-            ];
-            var_dump($config); die;
-
-            if ($this->Data_model->tambahDataSiswa($data)) {
-                $this->session->set_userdata("success", "Data berhasil ditambahkan");
-                redirect("Dashboard");
+                $data['foto'] = $config["upload_path"].$file["file_name"];
+    
+            }else {
+                echo  $this->upload->display_errors();
             }
-        }else {
-            echo  $this->upload->display_errors();
+        }
+        
+        if ($this->Data_model->tambahDataSiswa($data)) {
+            $this->session->set_userdata("success", "Data berhasil ditambahkan");
+            redirect("Dashboard");
         }
 
     }

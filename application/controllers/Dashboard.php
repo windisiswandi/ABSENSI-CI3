@@ -38,7 +38,7 @@ class Dashboard extends CI_Controller
     {
         // $SISWA = $this->Data_model->getDataSiswa("ok");
         // foreach ($SISWA as $value) {
-        //     if ($value['id_card'] == "11743") {
+        //     if ($value['id_card'] == "11869") {
         //         var_dump($value);
         //         return;
         //     }
@@ -183,12 +183,14 @@ class Dashboard extends CI_Controller
                                 'kelas'       => $row->getCellAtIndex(4),
                                 'jurusan'     => $row->getCellAtIndex(5),
                                 'jenisKelamin' => $row->getCellAtIndex(3),
-                                'thn_masuk' => $row->getCellAtIndex(6)
+                                'thn_masuk' => $row->getCellAtIndex(6),
+                                'foto' => $row->getCellAtIndex(7) ?  $row->getCellAtIndex(7) : ''
                             );
+
+
                             if ($this->input->post("btn_edit") == "upload") {
                                 $this->Data_model->tambahDataSiswa($data);
                             }elseif($this->input->post("btn_edit") == "update"){
-                                
                                 $this->Data_model->updateDataSiswa($data);
                             }
                         }
